@@ -1,0 +1,259 @@
+
+/* =====================================
+   INTRODUCTION
+   ===================================== */
+
+.accueil-introduction {
+    display: flex;
+    flex-direction: row;
+    width: 60%;
+    max-width: 1100px;
+    align-items: flex-start;
+    margin: auto; 
+}
+
+.accueil-introduction > div {
+    flex: 1;
+    padding-right: 80px;
+}
+
+.accueil-introduction h1 {
+    margin-bottom: 15px;
+}
+
+.accueil-introduction p {
+    margin-bottom: 30px;
+}
+
+.accueil-introduction > img {
+    width: 45%;
+    max-width: 400px;
+    height: auto;
+}
+
+
+/* =====================================
+   PHOTOS
+   ===================================== */
+
+.accueil-photos {
+    background-color: white;
+    padding: 80px;
+}
+
+.accueil-photos h2 {
+    color: #242424;
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.accueil-photos > div {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.accueil-photos img {
+    width: calc((70% - 30px) / 3);
+    height: 300px;
+    object-fit: cover;
+}
+
+
+/* =====================================
+   CONTACT
+   ===================================== */
+
+.section-contact h2 {
+    color: #a5b4fc;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    max-width: 700px;
+    margin: auto;
+    color: white;
+}
+
+.form-nom-email {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.form-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+input,
+textarea {
+    padding: 15px;
+    border-radius: 3px;
+    border: none;
+    font-family: inherit;
+}
+
+textarea {
+    resize: vertical;
+}
+
+label {
+    margin-bottom: 10px;
+}
+
+input[type='submit'] {
+    width: 200px;
+    margin: auto;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+
+/* =====================================
+   TABLETTE
+   ===================================== */
+
+@media screen and (max-width: 900px) {
+
+    .accueil-introduction {
+        width: 80%;
+        gap: 30px;
+    }
+
+    .accueil-introduction > img {
+        width: 40%;
+    }
+
+    .accueil-photos {
+        padding: 60px 40px;
+    }
+
+    form {
+        width: 60%;
+    }
+}
+
+
+/* =====================================
+   MOBILE
+   ===================================== */
+
+@media screen and (max-width: 700px) {
+
+    /* INTRODUCTION */
+
+    .accueil-introduction {
+        width: 100%;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .accueil-introduction > div {
+        width: 100%;
+    }
+
+    .accueil-introduction h1 {
+        font-size: 2.2em;
+    }
+
+    .accueil-introduction > img {
+        width: 100%;
+        max-width: 500px;
+        margin: auto;
+    }
+
+
+    /* PHOTOS */
+
+    .accueil-photos {
+        padding: 40px 20px;
+    }
+
+    .accueil-photos h2 {
+        margin-bottom: 40px;
+    }
+
+    .accueil-photos > div {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .accueil-photos img {
+        width: 100%;
+        height: auto;
+    }
+
+
+    /* FORMULAIRE */
+
+    .section-contact {
+        padding: 40px 20px;
+    }
+
+    .section-contact h2 {
+        margin-bottom: 35px;
+    }
+
+    form {
+        width: 100%;
+        max-width: 500px;
+    }
+
+    .form-nom-email {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .form-column {
+        width: 100%;
+    }
+
+    input,
+    textarea {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    input[type='submit'] {
+        width: 100%;
+        max-width: 200px;
+    }
+}
+
+
+/* =====================================
+   PETIT MOBILE
+   ===================================== */
+
+@media screen and (max-width: 400px) {
+
+    .accueil-introduction h1 {
+        font-size: 1.8em;
+    }
+
+    .accueil-photos {
+        padding: 30px 15px;
+    }
+
+    .accueil-photos h2 {
+        font-size: 1.4em;
+        margin-bottom: 30px;
+    }
+
+    .section-contact {
+        padding: 30px 15px;
+    }
+
+    .section-contact h2 {
+        font-size: 1.4em;
+    }
+}

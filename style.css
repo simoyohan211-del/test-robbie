@@ -1,0 +1,202 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Manrope', sans-serif;
+    font-size: 1em;
+    background-color: #1f2039;
+}
+
+a {
+    color: #242424;
+    text-decoration: none;
+}
+
+em {
+    color: #a5b4fc;
+    font-style: normal;
+}
+
+h1 {
+    font-size: 3.5em;
+    color: #a5b4fc;
+    font-family: 'Montserrat', sans-serif;
+}
+
+h2 {
+    color: #f9f8ff;
+}
+
+p,
+li {
+    font-size: 1.1em;
+    color: #f9f8ff;
+}
+
+header,
+footer {
+    background-color: white;
+    padding: 20px 50px;
+}
+
+header nav,
+footer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav a {
+    margin-left: 30px;
+}
+
+section {
+    padding: 80px;
+}
+
+.cta {
+    display: inline-block;
+    background: linear-gradient(#8e86b5, #acaeed);
+    color: white;
+    border-radius: 50px;
+    padding: 20px 30px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.cta:hover {
+    background: linear-gradient(#696484, #8788ba);
+    text-decoration: none;
+}
+
+.lien-icone {
+    margin-left: 30px;
+}
+
+.lien-icone:hover,
+.header nav img:hover {
+    opacity: 0.5;
+}
+
+
+/* =====================================
+   TABLETTE
+   ===================================== */
+
+@media screen and (max-width: 900px) {
+
+    header,
+    footer {
+        padding: 20px 30px;
+    }
+
+    section {
+        padding: 60px 40px;
+    }
+
+    h1 {
+        font-size: 2.8em;
+    }
+
+    p,
+    li {
+        font-size: 1em;
+    }
+}
+
+
+/* =====================================
+   MOBILE
+   ===================================== */
+
+@media screen and (max-width: 700px) {
+
+    header,
+    footer {
+        padding: 20px;
+    }
+
+    header nav {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    header nav > div {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    nav a {
+        margin-left: 0;
+    }
+
+    section {
+        padding: 40px 20px;
+    }
+
+    h1 {
+        font-size: 2.2em;
+    }
+
+    h2 {
+        font-size: 1.6em;
+    }
+
+    p,
+    li {
+        font-size: 1em;
+        line-height: 1.6;
+    }
+
+    .cta {
+        padding: 15px 20px;
+        text-align: center;
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .lien-icone {
+        margin-left: 10px;
+    }
+}
+
+
+/* =====================================
+   PETIT MOBILE
+   ===================================== */
+
+@media screen and (max-width: 400px) {
+
+    section {
+        padding: 30px 15px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    h2 {
+        font-size: 1.4em;
+    }
+
+    header,
+    footer {
+        padding: 15px;
+    }
+}
+

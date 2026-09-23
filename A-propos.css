@@ -1,0 +1,161 @@
+.carre-contenu {
+  border-right: 1px solid #8e86b5;
+  border-bottom: 1px solid #8e86b5;
+  padding: 50px;
+  width: 50%;
+  margin: auto;
+  margin-bottom: 80px;
+}
+
+.carre-contenu h2 {
+  margin-top: 30px;
+}
+
+.carre-contenu ul {
+  margin-top: 30px;
+}
+
+.carre-contenu + div {
+  text-align: center;
+}
+
+.a-propos-main {
+  margin: auto;
+}
+
+table {
+  color: white;
+  text-align: center;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+td,
+th {
+  padding: 15px;
+  border: 1px solid #a5b4fc;
+}
+
+td {
+  padding: 80px;
+}
+
+h2 {
+  margin-bottom: 80px;
+}
+
+h1,
+h2 {
+  text-align: center;
+}
+
+
+/* =====================================
+   TABLETTE
+   ===================================== */
+
+@media screen and (max-width: 900px) {
+
+    .a-propos-main > section:first-child h1 {
+        margin-bottom: 50px;
+    }
+
+    .carre-contenu {
+        width: 80%;
+        padding: 40px;
+        margin-bottom: 50px;
+    }
+
+    table {
+        font-size: 0.95em;
+    }
+
+    th,
+    td {
+        padding: 15px;
+    }
+}
+
+
+/* =====================================
+   MOBILE
+   ===================================== */
+
+@media screen and (max-width: 700px) {
+
+    .a-propos-main > section:first-child h1 {
+        font-size: 2.2em;
+        margin-bottom: 40px;
+    }
+
+    .carre-contenu {
+        width: 100%;
+        padding: 25px;
+
+        margin-bottom: 40px;
+    }
+
+    .carre-contenu h2 {
+        margin-top: 25px;
+        margin-bottom: 20px;
+    }
+
+    .carre-contenu ul {
+        padding-left: 20px;
+    }
+
+    /* Tableau */
+
+    .section-tarifs {
+        padding: 40px 20px;
+    }
+
+    .section-tarifs h2 {
+        font-size: 1.6em;
+        margin-bottom: 30px;
+    }
+
+    table {
+        width: 100%;
+        font-size: 0.85em;
+    }
+
+    th,
+    td {
+        padding: 12px 8px;
+    }
+}
+
+
+/* =====================================
+   PETIT MOBILE
+   ===================================== */
+
+@media screen and (max-width: 400px) {
+
+    .a-propos-main > section:first-child h1 {
+        font-size: 1.8em;
+    }
+
+    .carre-contenu {
+        padding: 20px;
+    }
+
+    .carre-contenu p,
+    .carre-contenu li {
+        font-size: 0.95em;
+    }
+
+    .section-tarifs {
+        padding: 30px 15px;
+    }
+
+    table {
+        font-size: 0.75em;
+    }
+
+    th,
+    td {
+        padding: 8px 4px;
+    }
+}
