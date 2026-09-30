@@ -1,20 +1,19 @@
-
-/* =====================================
+/* ==============================
    INTRODUCTION
-   ===================================== */
+   ============================== */
 
 .accueil-introduction {
     display: flex;
     flex-direction: row;
+    align-items: flex-start;
     width: 60%;
     max-width: 1100px;
-    align-items: flex-start;
-    margin: auto; 
+    margin: auto;
+    gap: 40px;
 }
 
 .accueil-introduction > div {
     flex: 1;
-    padding-right: 80px;
 }
 
 .accueil-introduction h1 {
@@ -29,12 +28,13 @@
     width: 45%;
     max-width: 400px;
     height: auto;
+    display: block;
 }
 
 
-/* =====================================
-   PHOTOS
-   ===================================== */
+/* ==============================
+   GALERIE PHOTOS
+   ============================== */
 
 .accueil-photos {
     background-color: white;
@@ -47,24 +47,31 @@
     margin-bottom: 80px;
 }
 
-.accueil-photos > div {
-    display: flex;
-    flex-direction: row;
+
+/* CONTENEUR DES 6 PHOTOS */
+
+.accueil-photos .galerie-accueil {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
     gap: 15px;
-    justify-content: center;
-    margin-bottom: 15px;
+    width: 100%;
 }
 
-.accueil-photos img {
-    width: calc((70% - 30px) / 3);
-    height: 300px;
+
+/* IMAGES */
+
+.accueil-photos .galerie-accueil img {
+    display: block;
+    width: 100% !important;
+    height: 400px;
     object-fit: cover;
+    min-width: 0;
 }
 
 
-/* =====================================
+/* ==============================
    CONTACT
-   ===================================== */
+   ============================== */
 
 .section-contact h2 {
     color: #a5b4fc;
@@ -110,17 +117,23 @@ label {
     margin-bottom: 10px;
 }
 
-input[type='submit'] {
+input[type="submit"] {
     width: 200px;
-    margin: auto;
-    margin-top: 30px;
+    margin: 30px auto 0;
     cursor: pointer;
+}
+#message-succes {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #a5b4fc;
+    transition: opacity 0.5s ease;
+    opacity: 1;
 }
 
 
-/* =====================================
+/* ==============================
    TABLETTE
-   ===================================== */
+   ============================== */
 
 @media screen and (max-width: 900px) {
 
@@ -137,19 +150,26 @@ input[type='submit'] {
         padding: 60px 40px;
     }
 
+    .accueil-photos .galerie-accueil {
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        gap: 10px;
+    }
+
+    .accueil-photos .galerie-accueil img {
+        height: 250px;
+    }
+
     form {
         width: 60%;
     }
 }
 
 
-/* =====================================
+/* ==============================
    MOBILE
-   ===================================== */
+   ============================== */
 
 @media screen and (max-width: 700px) {
-
-    /* INTRODUCTION */
 
     .accueil-introduction {
         width: 100%;
@@ -172,7 +192,7 @@ input[type='submit'] {
     }
 
 
-    /* PHOTOS */
+    /* GALERIE */
 
     .accueil-photos {
         padding: 40px 20px;
@@ -182,14 +202,15 @@ input[type='submit'] {
         margin-bottom: 40px;
     }
 
-    .accueil-photos > div {
-        flex-direction: column;
-        gap: 15px;
-    }
+    .accueil-photos .galerie-accueil {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 15px;
+}
 
-    .accueil-photos img {
-        width: 100%;
-        height: auto;
+    .accueil-photos .galerie-accueil img {
+        width: 100% !important;
+        height: 300px;
     }
 
 
@@ -223,16 +244,16 @@ input[type='submit'] {
         box-sizing: border-box;
     }
 
-    input[type='submit'] {
+    input[type="submit"] {
         width: 100%;
         max-width: 200px;
     }
 }
 
 
-/* =====================================
+/* ==============================
    PETIT MOBILE
-   ===================================== */
+   ============================== */
 
 @media screen and (max-width: 400px) {
 
@@ -249,6 +270,19 @@ input[type='submit'] {
         margin-bottom: 30px;
     }
 
+    .accueil-photos .galerie-accueil {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    gap: 10px;
+    width: 100%;
+}
+
+    .accueil-photos .galerie-accueil img {
+        width: 100% !important;
+        height: 100px;
+        object-fit: cover;
+    }
+
     .section-contact {
         padding: 30px 15px;
     }
@@ -256,4 +290,5 @@ input[type='submit'] {
     .section-contact h2 {
         font-size: 1.4em;
     }
+
 }

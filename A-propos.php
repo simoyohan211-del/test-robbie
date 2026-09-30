@@ -13,6 +13,32 @@
 </head>
 
 <body>
+    <?php
+
+require_once __DIR__ . '/config.php';
+
+$stmtServices = $pdo->prepare("
+    SELECT *
+    FROM services
+    ORDER BY id ASC
+");
+
+$stmtServices->execute();
+
+$services = $stmtServices->fetchAll(PDO::FETCH_ASSOC);
+
+$stmtTarifs = $pdo->prepare("
+    SELECT *
+    FROM tarifs
+    ORDER BY id ASC
+");
+
+$stmtTarifs->execute();
+
+$tarifs = $stmtTarifs->fetchAll(PDO::FETCH_ASSOC);
+
+?>
+
     <header>
         <nav>
             <a href="index.html" class="lien-icone">
@@ -20,9 +46,9 @@
             </a>
             
             <div>
-                <a href="index.html">Accueil</a>
-                <a href="a-propos.html">À propos</a>
-                <a href="portfolio.html">Portfolio</a>
+                <a href="index.php">Accueil</a>
+                <a href="a-propos.php">À propos</a>
+                <a href="portfolio.php">Portfolio</a>
             </div>
         </nav>
     </header>
@@ -35,14 +61,20 @@
                 </p>
                 <h2>Services</h2>
                 <ul>
-                    <li>Portrait seul ou à plusieurs</li>
-                    <li>Shooting mode</li>
-                    <li>Retouches sur mesure</li>
-                    <li>Développement</li>
-                </ul>
+
+    <?php foreach ($services as $service): ?>
+
+        <li>
+            <?= htmlspecialchars($service['nom']) ?>
+        </li>
+
+    <?php endforeach; ?>
+
+</ul>
+                
             </div>
             <div>
-                <a href="Portfolio.html" class="cta">VOIR MON PORTFOLIO</a>
+                <a href="Portfolio.php" class="cta">VOIR MON PORTFOLIO</a>
             </div>
         </section>
         <section class="section-tarifs">
@@ -56,25 +88,35 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Retouches photo
-                            studio professionnel</td>
-                        <td>x 800 photos</td>
-                        <td>3200€/800 photos</td>
-                    </tr>
-                    <tr>
-                        <td>Assistant photo
-                            lumière professionnel</td>
-                        <td>x 2 sets studio</td>
-                        <td>1500€/journée</td>
-                    </tr>
-                </tbody>
+
+    <?php foreach ($tarifs as $tarif): ?>
+
+        <tr>
+
+            <td>
+                <?= htmlspecialchars($tarif['designation']) ?>
+            </td>
+
+            <td>
+                <?= htmlspecialchars($tarif['quantite']) ?>
+            </td>
+
+            <td>
+                <?= htmlspecialchars($tarif['prix']) ?>
+            </td>
+
+        </tr>
+
+    <?php endforeach; ?>
+
+</tbody>
+                
             </table>
 
         </section>
     </main>
     <footer>
-        <a href="index.html" class="lien-icone">
+        <a href="index.php" class="lien-icone">
             <img src="IMG ROBBIE LENS/logo.png" alt="Logo Robbie Lens" >
         </a>
         <div>
